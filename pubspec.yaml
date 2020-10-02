@@ -1,5 +1,5 @@
 name: flutter_text_helpers
-description: A widget collection which simplifies the usage of Text()
+description: A widget collection which simplifies the usage of Text(). No need to use Theme.of(context) to access textTheme elements like bodytext1 or headline1, etc. 
 version: 1.0.0
 homepage: https://gitlab.com/ad-on-is/flutter_text_helpers
 
