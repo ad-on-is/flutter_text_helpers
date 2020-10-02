@@ -32,6 +32,25 @@ Column(widgets: [
 
 ```
 
+## Available Widgets
+
+```dart
+BodyText1()
+BodyText2()
+HeadlineText1()
+HeadlineText2()
+HeadlineText3()
+HeadlineText4()
+HeadlineText5()
+HeadlineText6()
+SubtitleText1()
+SubtitleText2()
+ButtonText()
+CaptionText()
+OverlineText()
+
+```
+
 ## Features and bugs
 
 Please file feature requests and bugs at the [issue tracker][tracker].
