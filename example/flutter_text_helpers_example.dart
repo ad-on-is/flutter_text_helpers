@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:text_helpers/src/text_helpers_base.dart';
-import 'package:text_helpers/text_helpers.dart';
+import 'package:flutter_text_helpers/flutter_text_helpers.dart';
 
 void main() {
   runApp(MyApp());
