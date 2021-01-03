@@ -1,6 +1,6 @@
 name: flutter_text_helpers
 description: A widget collection which simplifies the usage of Text() and TextField(). No need to use Theme.of(context) to access textTheme elements like bodytext1 or headline1, etc. Also provides shortcuts for color and fontSize.
-version: 2.0.0
+version: 2.0.1
 homepage: https://gitlab.com/ad-on-is/flutter_text_helpers
 
 environment:
