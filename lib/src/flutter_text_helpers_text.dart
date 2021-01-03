@@ -2,25 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'dart:ui' as ui show TextHeightBehavior;
 
-enum TheTypo {
-  BodyText1,
-  BodyText2,
-  HeadlineText1,
-  HeadlineText2,
-  HeadlineText3,
-  HeadlineText4,
-  HeadlineText5,
-  HeadlineText6,
-  SubtitleText1,
-  SubtitleText2,
-  ButtonText,
-  CaptionText,
-  OverlineText,
-}
+import 'typos.dart';
 
 class _TheText extends StatelessWidget {
   final String data;
-  final TheTypo typo;
+  final Typo typo;
   final Color color;
   final double fontSize;
   final InlineSpan textSpan;
@@ -56,26 +42,10 @@ class _TheText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Map<TheTypo, TextStyle> styles = {
-      TheTypo.BodyText1: Theme.of(context).textTheme.bodyText1,
-      TheTypo.BodyText2: Theme.of(context).textTheme.bodyText2,
-      TheTypo.HeadlineText1: Theme.of(context).textTheme.headline1,
-      TheTypo.HeadlineText2: Theme.of(context).textTheme.headline2,
-      TheTypo.HeadlineText3: Theme.of(context).textTheme.headline3,
-      TheTypo.HeadlineText4: Theme.of(context).textTheme.headline4,
-      TheTypo.HeadlineText5: Theme.of(context).textTheme.headline5,
-      TheTypo.HeadlineText6: Theme.of(context).textTheme.headline6,
-      TheTypo.SubtitleText1: Theme.of(context).textTheme.subtitle1,
-      TheTypo.SubtitleText2: Theme.of(context).textTheme.subtitle2,
-      TheTypo.CaptionText: Theme.of(context).textTheme.caption,
-      TheTypo.ButtonText: Theme.of(context).textTheme.button,
-      TheTypo.OverlineText: Theme.of(context).textTheme.overline,
-    };
-
-    TextStyle finalStyle = styles[TheTypo.BodyText1];
+    var finalStyle = styles(context)[Typo.BodyText1];
 
     if (typo != null) {
-      finalStyle = styles[typo];
+      finalStyle = styles(context)[typo];
     }
 
     if (color != null) {
@@ -123,7 +93,7 @@ class BodyText1 extends _TheText {
       textWidthBasis,
       textHeightBehavior,
       textScaleFactor})
-      : super(data, TheTypo.BodyText1,
+      : super(data, Typo.BodyText1,
             color: color,
             fontSize: fontSize,
             textAlign: textAlign,
@@ -157,7 +127,7 @@ class BodyText2 extends _TheText {
       textWidthBasis,
       textHeightBehavior,
       textScaleFactor})
-      : super(data, TheTypo.BodyText2,
+      : super(data, Typo.BodyText2,
             color: color,
             fontSize: fontSize,
             textAlign: textAlign,
@@ -191,7 +161,7 @@ class HeadlineText1 extends _TheText {
       textWidthBasis,
       textHeightBehavior,
       textScaleFactor})
-      : super(data, TheTypo.HeadlineText1,
+      : super(data, Typo.HeadlineText1,
             color: color,
             fontSize: fontSize,
             textAlign: textAlign,
@@ -225,7 +195,7 @@ class HeadlineText2 extends _TheText {
       textWidthBasis,
       textHeightBehavior,
       textScaleFactor})
-      : super(data, TheTypo.HeadlineText2,
+      : super(data, Typo.HeadlineText2,
             color: color,
             fontSize: fontSize,
             textAlign: textAlign,
@@ -259,7 +229,7 @@ class HeadlineText3 extends _TheText {
       textWidthBasis,
       textHeightBehavior,
       textScaleFactor})
-      : super(data, TheTypo.HeadlineText3,
+      : super(data, Typo.HeadlineText3,
             color: color,
             fontSize: fontSize,
             textAlign: textAlign,
@@ -293,7 +263,7 @@ class HeadlineText4 extends _TheText {
       textWidthBasis,
       textHeightBehavior,
       textScaleFactor})
-      : super(data, TheTypo.HeadlineText4,
+      : super(data, Typo.HeadlineText4,
             color: color,
             fontSize: fontSize,
             textAlign: textAlign,
@@ -327,7 +297,7 @@ class HeadlineText5 extends _TheText {
       textWidthBasis,
       textHeightBehavior,
       textScaleFactor})
-      : super(data, TheTypo.HeadlineText5,
+      : super(data, Typo.HeadlineText5,
             color: color,
             fontSize: fontSize,
             textAlign: textAlign,
@@ -361,7 +331,7 @@ class HeadlineText6 extends _TheText {
       textWidthBasis,
       textHeightBehavior,
       textScaleFactor})
-      : super(data, TheTypo.HeadlineText6,
+      : super(data, Typo.HeadlineText6,
             color: color,
             fontSize: fontSize,
             textAlign: textAlign,
@@ -395,7 +365,7 @@ class SubtitleText1 extends _TheText {
       textWidthBasis,
       textHeightBehavior,
       textScaleFactor})
-      : super(data, TheTypo.SubtitleText1,
+      : super(data, Typo.SubtitleText1,
             color: color,
             fontSize: fontSize,
             textAlign: textAlign,
@@ -429,7 +399,7 @@ class SubtitleText2 extends _TheText {
       textWidthBasis,
       textHeightBehavior,
       textScaleFactor})
-      : super(data, TheTypo.SubtitleText2,
+      : super(data, Typo.SubtitleText2,
             color: color,
             fontSize: fontSize,
             textAlign: textAlign,
@@ -463,7 +433,7 @@ class ButtonText extends _TheText {
       textWidthBasis,
       textHeightBehavior,
       textScaleFactor})
-      : super(data, TheTypo.ButtonText,
+      : super(data, Typo.ButtonText,
             color: color,
             fontSize: fontSize,
             textAlign: textAlign,
@@ -497,7 +467,7 @@ class CaptionText extends _TheText {
       textWidthBasis,
       textHeightBehavior,
       textScaleFactor})
-      : super(data, TheTypo.CaptionText,
+      : super(data, Typo.CaptionText,
             color: color,
             fontSize: fontSize,
             textAlign: textAlign,
@@ -531,7 +501,7 @@ class OverlineText extends _TheText {
       textWidthBasis,
       textHeightBehavior,
       textScaleFactor})
-      : super(data, TheTypo.OverlineText,
+      : super(data, Typo.OverlineText,
             color: color,
             fontSize: fontSize,
             textAlign: textAlign,
