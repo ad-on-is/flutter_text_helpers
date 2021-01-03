@@ -1,6 +1,6 @@
 # Flutter Text Helpers
 
-A collection of widgets which simplifies the usage of `Text()`
+A collection of widgets which simplifies the usage of `Text()` and `TextField()`
 
 ## Usage
 
@@ -11,7 +11,7 @@ import 'package:flutter_text_helpers/flutter_text_helpers.dart';
 
 ```
 
-Use as widget instead of `Text()`
+Use as widget instead of `Text()` or `TextField()`
 
 ```dart
 Column(widgets: [
@@ -25,6 +25,9 @@ Column(widgets: [
   //Shortcut for Text('Body text', style: Theme.of(context).textTheme.bodyText.copyWith(color: Colors.blue, fontSize: 12))
   BodyText1('YourBody text', color: Colors.blue, fontSize: 12),
 
+//Shortcut for TextField(style: Theme.of(context).textTheme.bodyText.copyWith(color: Colors.blue, fontSize: 12), decoration: InputDecoration(hintText: ''Hint tex))
+  BodyTextField1('Hint text', color: Colors.blue, fontSize: 12),
+
   // All parameters that Text() uses are still available
   BodyText('Your text', style: TextStyle(color: Colors.blue), overflow: Overflow.elipsis)
 
@@ -32,7 +35,7 @@ Column(widgets: [
 
 ```
 
-## Available Widgets
+## Available Widgets for Text
 
 ```dart
 BodyText1()
@@ -48,6 +51,25 @@ SubtitleText2()
 ButtonText()
 CaptionText()
 OverlineText()
+
+```
+
+## Available Widgets for TextField
+
+```dart
+BodyTextField1()
+BodyTextField2()
+HeadlineTextField1()
+HeadlineTextField2()
+HeadlineTextField3()
+HeadlineTextField4()
+HeadlineTextField5()
+HeadlineTextField6()
+SubtitleTextField1()
+SubtitleTextField2()
+ButtonTextField()
+CaptionTextField()
+OverlineTextField()
 
 ```
 
