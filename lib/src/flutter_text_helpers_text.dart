@@ -7,21 +7,21 @@ import 'typos.dart';
 class _TheText extends StatelessWidget {
   final String data;
   final Typo typo;
-  final Color color;
-  final double fontSize;
-  final InlineSpan textSpan;
-  final TextStyle style;
-  final StrutStyle strutStyle;
-  final TextAlign textAlign;
-  final TextDirection textDirection;
-  final Locale locale;
-  final bool softWrap;
-  final TextOverflow overflow;
-  final double textScaleFactor;
-  final int maxLines;
-  final String semanticsLabel;
-  final TextWidthBasis textWidthBasis;
-  final ui.TextHeightBehavior textHeightBehavior;
+  final Color? color;
+  final double? fontSize;
+  final InlineSpan? textSpan;
+  final TextStyle? style;
+  final StrutStyle? strutStyle;
+  final TextAlign? textAlign;
+  final TextDirection? textDirection;
+  final Locale? locale;
+  final bool? softWrap;
+  final TextOverflow? overflow;
+  final double? textScaleFactor;
+  final int? maxLines;
+  final String? semanticsLabel;
+  final TextWidthBasis? textWidthBasis;
+  final ui.TextHeightBehavior? textHeightBehavior;
 
   _TheText(this.data, this.typo,
       {this.style,
@@ -49,15 +49,15 @@ class _TheText extends StatelessWidget {
     }
 
     if (color != null) {
-      finalStyle = finalStyle.copyWith(color: color);
+      finalStyle = finalStyle!.copyWith(color: color);
     }
 
     if (fontSize != null) {
-      finalStyle = finalStyle.copyWith(fontSize: fontSize);
+      finalStyle = finalStyle!.copyWith(fontSize: fontSize);
     }
 
     if (style != null) {
-      finalStyle = finalStyle.copyWith(color: style.color);
+      finalStyle = finalStyle!.copyWith(color: style!.color);
     }
 
     return Text(data,

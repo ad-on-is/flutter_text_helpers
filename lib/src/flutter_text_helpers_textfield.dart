@@ -8,59 +8,59 @@ import 'dart:ui' as ui show BoxHeightStyle, BoxWidthStyle;
 
 class _TheTextField extends StatelessWidget {
   final String data;
-  final TextStyle style;
-  final TextDirection textDirection;
-  final int maxLines;
-  final StrutStyle strutStyle;
-  final TextAlign textAlign;
+  final TextStyle? style;
+  final TextDirection? textDirection;
+  final int? maxLines;
+  final StrutStyle? strutStyle;
+  final TextAlign? textAlign;
   final Typo typo;
-  final Color color;
-  final double fontSize;
-  final TextEditingController controller;
-  final FocusNode focusNode;
-  final InputDecoration decoration;
-  final TextInputType keyboardType;
-  final TextInputAction textInputAction;
-  final TextCapitalization textCapitalization;
-  final TextAlignVertical textAlignVertical;
+  final Color? color;
+  final double? fontSize;
+  final TextEditingController? controller;
+  final FocusNode? focusNode;
+  final InputDecoration? decoration;
+  final TextInputType? keyboardType;
+  final TextInputAction? textInputAction;
+  final TextCapitalization? textCapitalization;
+  final TextAlignVertical? textAlignVertical;
   final bool autofocus;
-  final String obscuringCharacter;
+  final String? obscuringCharacter;
   final bool obscureText;
   final bool autocorrect;
-  final SmartDashesType smartDashesType;
-  final SmartQuotesType smartQuotesType;
+  final SmartDashesType? smartDashesType;
+  final SmartQuotesType? smartQuotesType;
   final bool enableSuggestions;
-  final int minLines;
+  final int? minLines;
   final bool expands;
   final bool readOnly;
-  final ToolbarOptions toolbarOptions;
-  final bool showCursor;
-  final int maxLength;
+  final ToolbarOptions? toolbarOptions;
+  final bool? showCursor;
+  final int? maxLength;
   final bool maxLengthEnforced;
-  final ValueChanged<String> onChanged;
-  final ValueChanged<String> onSubmitted;
-  final AppPrivateCommandCallback onAppPrivateCommand;
-  final List<TextInputFormatter> inputFormatters;
-  final bool enabled;
+  final ValueChanged<String>? onChanged;
+  final ValueChanged<String>? onSubmitted;
+  final AppPrivateCommandCallback? onAppPrivateCommand;
+  final List<TextInputFormatter>? inputFormatters;
+  final bool? enabled;
   final double cursorWidth;
-  final double cursorHeight;
-  final Radius cursorRadius;
-  final Color cursorColor;
+  final double? cursorHeight;
+  final Radius? cursorRadius;
+  final Color? cursorColor;
   final ui.BoxHeightStyle selectionHeightStyle;
   final ui.BoxWidthStyle selectionWidthStyle;
-  final Brightness keyboardAppearance;
+  final Brightness? keyboardAppearance;
   final EdgeInsets scrollPadding;
   final bool enableInteractiveSelection;
   final DragStartBehavior dragStartBehavior;
   bool get selectionEnabled => enableInteractiveSelection;
-  final GestureTapCallback onTap;
-  final MouseCursor mouseCursor;
-  final InputCounterWidgetBuilder buildCounter;
-  final ScrollPhysics scrollPhysics;
-  final ScrollController scrollController;
-  final Iterable<String> autofillHints;
-  final String restorationId;
-  final VoidCallback onEditingComplete;
+  final GestureTapCallback? onTap;
+  final MouseCursor? mouseCursor;
+  final InputCounterWidgetBuilder? buildCounter;
+  final ScrollPhysics? scrollPhysics;
+  final ScrollController? scrollController;
+  final Iterable<String>? autofillHints;
+  final String? restorationId;
+  final VoidCallback? onEditingComplete;
 
   _TheTextField(
     this.data,
@@ -121,13 +121,13 @@ class _TheTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var finalStyle = styles(context)[Typo.BodyText1];
-    var finalDecoration = InputDecoration();
+    InputDecoration? finalDecoration = InputDecoration();
 
     if (decoration != null) {
       finalDecoration = decoration;
     }
     if (data != null) {
-      finalDecoration = finalDecoration.copyWith(hintText: data);
+      finalDecoration = finalDecoration!.copyWith(hintText: data);
     }
 
     if (typo != null) {
@@ -135,15 +135,15 @@ class _TheTextField extends StatelessWidget {
     }
 
     if (color != null) {
-      finalStyle = finalStyle.copyWith(color: color);
+      finalStyle = finalStyle!.copyWith(color: color);
     }
 
     if (fontSize != null) {
-      finalStyle = finalStyle.copyWith(fontSize: fontSize);
+      finalStyle = finalStyle!.copyWith(fontSize: fontSize);
     }
 
     if (style != null) {
-      finalStyle = finalStyle.copyWith(color: style.color);
+      finalStyle = finalStyle!.copyWith(color: style!.color);
     }
 
     return TextField(
@@ -170,7 +170,7 @@ class _TheTextField extends StatelessWidget {
         minLines: minLines,
         mouseCursor: mouseCursor,
         obscureText: obscureText,
-        obscuringCharacter: obscuringCharacter,
+        obscuringCharacter: obscuringCharacter!,
         onAppPrivateCommand: onAppPrivateCommand,
         onChanged: onChanged,
         onEditingComplete: onEditingComplete,
@@ -187,14 +187,14 @@ class _TheTextField extends StatelessWidget {
         smartDashesType: smartDashesType,
         smartQuotesType: smartQuotesType,
         textAlignVertical: textAlignVertical,
-        textCapitalization: textCapitalization,
+        textCapitalization: textCapitalization!,
         textInputAction: textInputAction,
         toolbarOptions: toolbarOptions,
         style: finalStyle,
         textDirection: textDirection,
         maxLines: maxLines,
         strutStyle: strutStyle,
-        textAlign: textAlign,
+        textAlign: textAlign!,
         decoration: finalDecoration);
   }
 }
