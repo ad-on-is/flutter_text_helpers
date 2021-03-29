@@ -4,7 +4,7 @@ version: 2.0.5
 homepage: https://gitlab.com/ad-on-is/flutter_text_helpers
 
 environment:
-  sdk: '>=2.8.1 <3.0.0'
+  sdk: '>=2.12.0 <3.0.0'
 
 dependencies:
   flutter:

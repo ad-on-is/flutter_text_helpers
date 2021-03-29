@@ -16,7 +16,7 @@ enum Typo {
   OverlineText,
 }
 
-Map<Typo, TextStyle> styles(BuildContext context) {
+Map<Typo, TextStyle?> styles(BuildContext context) {
   return {
     Typo.BodyText1: Theme.of(context).textTheme.bodyText1,
     Typo.BodyText2: Theme.of(context).textTheme.bodyText2,
